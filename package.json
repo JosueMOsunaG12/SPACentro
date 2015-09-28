@@ -1,0 +1,38 @@
+{
+  "name": "SPACentro",
+  "version": "0.0.1",
+  "description": "An example module to illustrate the usage of HTML5, CSS3 and javascript",
+  "author": "Josue Osuna <josuemosunag12@gmail.com>",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JosueMOsunaG12/SPACentro/"
+  },
+  "keywords": [
+    "SPACentro",
+    "example",
+    "JosueMOsunag12",
+    "HTML5",
+    "CSS3",
+    "javascript",
+    "gulp"
+  ],
+  "dependencies": {
+    "connect-livereload": "^0.5.3",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.1",
+    "tiny-lr": "^0.1.6"
+  },
+  "analyze": true,
+  "license": "MIT"
+}
