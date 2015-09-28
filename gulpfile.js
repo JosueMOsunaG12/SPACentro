@@ -2,8 +2,9 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
   minifyCSS = require('gulp-minify-css'),
  	tinylr = require('tiny-lr')(),
- 	connect = require('connect-livereload'),
-	uglify = require('gulp-uglify');
+ 	connectLv = require('connect-livereload'),
+	uglify = require('gulp-uglify')
+  connect = require('gulp-connect');
 
 gulp.task('compress', function() {
   	gulp.src('lib/**/*.js')
@@ -21,7 +22,7 @@ gulp.task('styles', function() {
 gulp.task('express', function() {
   var express = require('express');
   var app = express();
-  app.use(connect({port: 35729}));
+  app.use(connectLv({port: 35729}));
   app.use(express.static('public'));
   app.listen(4000, '0.0.0.0');
 });
@@ -49,3 +50,11 @@ gulp.task('watch', function() {
 
 gulp.task('default', 
 	['styles', 'compress', 'express', 'livereload', 'watch']);
+
+gulp.task ('deploy', function() {
+    connect.server({
+      root: 'public/',
+      port: process.env.PORT || 5000,
+      livereload: false
+    });
+  });
